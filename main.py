@@ -128,13 +128,17 @@ def process_command(bot, update):
 图片
 音频/语音
 视频
-文件""")
+文件
+不可接受的投稿要素：
+包含女性角色
+不够帅
+不够色色""")
         return
     if command == 'version':
         bot.send_message(chat_id=update.message.chat_id,
-                         text='Telegram Submission Bot\n'
+                         text='GAYHUB Submission Bot\n'
                          + Version_Code
-                         + '\nhttps://github.com/Netrvin/telegram-submission-bot'
+                         + '\nhttps://github.com/Andy-Landers/gayhub-submission-bot'
                          )
         return
     if update.message.from_user.id == CONFIG['Admin']:
@@ -186,7 +190,7 @@ def anonymous_post(bot, msg, editor):
                           ]) + ':' + str(msg.message_id)]['Markup_ID'])
     bot.send_message(chat_id=submission_list[str(CONFIG['Group_ID'])
                      + ':' + str(msg.message_id)]['Sender_ID'],
-                     text="您的稿件已过审，感谢您对我们的支持",
+                     text="您的稿件已发布，感谢您的投稿",
                      reply_to_message_id=submission_list[str(CONFIG['Group_ID'
                      ]) + ':' + str(msg.message_id)]['Original_MsgID'])
     threading.Thread(target=save_data).start()
@@ -217,7 +221,7 @@ def real_name_post(bot, msg, editor):
                           ]) + ':' + str(msg.message_id)]['Markup_ID'])
     bot.send_message(chat_id=submission_list[str(CONFIG['Group_ID'])
                      + ':' + str(msg.message_id)]['Sender_ID'],
-                     text="您的稿件已过审，感谢您对我们的支持",
+                     text="您的稿件已发布，感谢您的投稿",
                      reply_to_message_id=submission_list[str(CONFIG['Group_ID'
                      ]) + ':' + str(msg.message_id)]['Original_MsgID'])
     threading.Thread(target=save_data).start()
