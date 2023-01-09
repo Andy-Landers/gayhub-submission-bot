@@ -123,7 +123,10 @@ def process_command(bot, update):
             ).lower()
     if command == 'start':
         bot.send_message(chat_id=update.message.chat_id,
-                         text="""可接收的投稿类型:
+                         text="""欢迎使用GAYHUB频道投稿机器人！
+我们的频道： @gayhub_nsfw
+我们的群组： @gayhub_community
+可接收的投稿类型:
 文字
 图片
 音频/语音
